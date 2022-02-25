@@ -9,7 +9,8 @@ def userchoice():
         userdate = str(input('Enter date(yyyy-mm-dd): '))
         try:
             classobj = algocal(userdate)  # calling the class
-            classobj.validate()
+            perchar = classobj.validate()
+            print(perchar)
         except ValueError:
             print("Enter date in proper format.")
         # print(stripdate.year)
