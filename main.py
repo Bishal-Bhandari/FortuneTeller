@@ -1,5 +1,3 @@
-from datetime import datetime
-import pyttsx3
 from calculatefuture import algocal
 
 
