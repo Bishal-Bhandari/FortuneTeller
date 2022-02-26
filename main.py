@@ -1,4 +1,4 @@
-from calculatefuture import algocal
+from calculatefuture import AlgoCal
 
 
 def userchoice():
@@ -8,7 +8,7 @@ def userchoice():
     while userag:  # if user want to perform the activity again
         userdate = str(input('Enter date(yyyy-mm-dd): '))
         try:
-            classobj = algocal(userdate)  # calling the class
+            classobj = AlgoCal(userdate)  # calling the class
             perchar = classobj.validate()
             print(perchar)
         except ValueError:

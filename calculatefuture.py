@@ -25,7 +25,7 @@ class AlgoCal:
         self.fortunecal(datemonth, dateyear, yearver, monthver)
 
     def fortunecal(self, datemonth, dateyear, yearver, monthver):
-        for i in range(0, 12):  # for looping on basis of month
+        for i in range(len(monthver)):  # for looping on basis of month
             if monthver[i] == datemonth:  # for checking the user month
                 for j in range(len(yearver)):  # for looping on basis of year
                     try:
