@@ -10,10 +10,11 @@ def userchoice():
         try:
             classobj = AlgoCal(userdate)  # calling the class
             perchar = classobj.validate()
-            print(perchar)
+            print("\nYour characters according to given date are as follow: ")
+            print("\nYour characters according solar cycle are:\n" + perchar[0])  # printing the char
+            print("\nYour characters according lunar cycle are:\n" + perchar[1])  # printing the char
         except ValueError:
             print("Enter date in proper format.")
-        # print(stripdate.year)
         loopchoice = str(input('\nIf you want to revisit then press "Y". If you want to exit press "N". ').upper())
         if loopchoice == "Y":
             userag = True

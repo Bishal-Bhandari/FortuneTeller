@@ -9,7 +9,7 @@ class AlgoCal:
     def validate(self):
         try:
             dateuser = datetime.strptime(self.userdate, '%Y-%m-%d')
-            print("hello form validation " + str(dateuser))
+            print("Your date of birth is: " + str(dateuser))
             perchar = self.fileread(dateuser)
             return perchar
         except ValueError:
@@ -24,7 +24,7 @@ class AlgoCal:
         yearcharver = excelyear['yearchar'].values  # reading year char column from file
         monthver = excelmonth['months'].values  # reading month column from file
         monthcharver = excelmonth['charmonth'].values  # reading month column from file
-        self.fortunecal(datemonth, dateyear, yearver, monthver, yearcharver, monthcharver)
+        return self.fortunecal(datemonth, dateyear, yearver, monthver, yearcharver, monthcharver)
 
     def fortunecal(self, datemonth, dateyear, yearver, monthver, yearcharver, monthcharver):
         for i in range(len(monthver)):  # for looping on basis of month
@@ -32,8 +32,6 @@ class AlgoCal:
                 for j in range(len(yearver)):  # for looping on basis of year
                     try:
                         if yearver[j] == dateyear:  # for checking the user year
-                            print("\n Your personal characters are as follow:")
-                            print("\nAccording to solar cycle your characters are:\n" + yearcharver[j])
-                            print("\nAccording to lunar cycle your characters are:\n" + monthcharver[i])
+                            return yearcharver[j], monthcharver[i]
                     except ValueError:
                         print("No valid date found.")
