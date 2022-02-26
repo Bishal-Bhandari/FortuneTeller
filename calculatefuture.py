@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 
 
-class algocal:
+class AlgoCal:
     def __init__(self, userdate):
         self.userdate = userdate
 
@@ -25,8 +25,11 @@ class algocal:
         self.fortunecal(datemonth, dateyear, yearver, monthver)
 
     def fortunecal(self, datemonth, dateyear, yearver, monthver):
-        for x in range(0,12):
-            if monthver[x] == datemonth:
-                print("yes")
-
-
+        for i in range(0, 12):  # for looping on basis of month
+            if monthver[i] == datemonth:  # for checking the user month
+                for j in range(len(yearver)):  # for looping on basis of year
+                    try:
+                        if yearver[j] == dateyear:  # for checking the user year
+                            print(yearver[j])
+                    except ValueError:
+                        print("No valid date found.")
