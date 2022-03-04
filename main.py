@@ -1,10 +1,12 @@
+import pyttsx3
+
 from calculatefuture import AlgoCal
 
 
 def userchoice():
     userag = True
     print("WELCOME!!! LETS SEE YOUR FUTURE.\n")
-    # pyttsx3.speak("WELCOME!!! LETS SEE YOUR FUTURE.")
+    pyttsx3.speak("WELCOME!!! LETS SEE YOUR FUTURE.")
     while userag:  # if user want to perform the activity again
         userdate = str(input('Enter date(yyyy-mm-dd): '))
         try:
